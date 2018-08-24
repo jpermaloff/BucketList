@@ -1,6 +1,6 @@
 "use strict";
 
-let event = {
+let eventList = {
     bindings: "",
     templateUrl: "components/eventlist/event.html",
     controller: ["TicketService", "$location", function (TicketService, $location) {
@@ -26,4 +26,4 @@ let event = {
 
 angular
     .module("app")
-    .component("event", event);
+    .component("eventList", eventList);

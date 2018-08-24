@@ -14,7 +14,7 @@ let searchCriteria = {
         vm.getData = (interest, city, fdate, ldate) => {
             TicketService.requestData(interest, city, fdate, ldate).then(()=> {
                 $location.path("/event");
-            })
+            });
         }
     }]
 }

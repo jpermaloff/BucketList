@@ -59,14 +59,6 @@ button{
     width: 100%; 
 }
 
-.backgroundGradient{
-    background: linear-gradient(45deg, #3e3e3e, black 90%);
-    min-height: 100%; 
-    position: absolute; 
-    width: 100%; 
-    z-index: -1; 
-}
-
 .title{
     font-size: 3.5em; 
     color: #fff7e7; 
@@ -127,6 +119,10 @@ button{
       
 }
 
+.city-input, .interest-input, .date-input {
+    padding: 8px;
+}
+
 .city-input{
     width: 93%; 
 }
@@ -136,7 +132,7 @@ button{
 }
 
 .date-input{
-    width: 45%; 
+    width: 44%; 
     font-size: 0.5em; 
 }
 
@@ -290,34 +286,16 @@ background-color: darkgray;
     color: darkgray;
 }
 
-/* transitions */
-.view-animate.ng-enter, .view-animate.ng-leave {
-    
-    
-}
-
-.view-animate.ng-enter {
-    animation: fadein 1s linear;
-    opacity:0;
-}
-
-.view-animate.ng-leave {
-    animation: fadeout 0s linear;
-
-}
-
-@keyframes fadein {
-    0% {opacity: 0;}
-    100% {opacity: 1;}
-}
-
-@keyframes fadeout {
-    0% {opacity: 1;}
-    100% {opacity: 0;}
-
 .eventTitle {
-    font-size:50px;
+    font-size:45px;
     font-family: 'Permanent Marker', cursive;
+}
+.modalTitle {
+    font-size:40px;
+    font-family: 'Permanent Marker', cursive;
+    margin: 0 auto;
+    width: 95%;
+    text-align: center;
 }
 .eventP {
     font-size: 20px;
@@ -327,4 +305,38 @@ background-color: darkgray;
 a {
     font-size: 20px;
 
+}
+
+.lastitem {
+    margin-bottom: 10px;
+}
+
+/* transitions */
+
+.view-animate {
+    background: linear-gradient(45deg, #3e3e3e, black 90%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    min-height: 100%;
+    opacity: 1;
+}
+
+.view-animate.ng-enter,
+.view-animate.ng-leave {
+    -webkit-transition: all 1s ease;
+    transition: all 1s ease;
+}
+.view-animate.ng-enter {
+    opacity: 0;
+}
+.view-animate.ng-enter-active {
+    opacity: 1;
+}
+.view-animate.ng-leave {
+    opacity: 1;
+}
+.view-animate.ng-leave-active {
+    opacity: 0;
 }

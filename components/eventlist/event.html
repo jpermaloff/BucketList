@@ -12,6 +12,7 @@
       <h1 class="eventTitle">{{ info.name }}</h1>
       <p class="eventP">{{ info.dates.start.localDate }}</p>
       <p class="eventP">{{ info._embedded.venues[0].name }}</p>
+      <p class="eventP">{{ info._embedded.venues[0].city.name }}, {{ info._embedded.venues[0].state.stateCode }}</p>
       <a href="{{info.url}}">View on Ticketmaster</a>
     </section>
     <section class="eventBtns">
@@ -22,10 +23,10 @@
 
   <section class="modal" ng-if="$ctrl.show === $index">
     <img src="{{ info.images[0].url }}">
-    <h1 class="eventTitle">{{ info.name }}</h1>
+    <h1 class="modalTitle">{{ info.name }}</h1>
     <p class="eventP">{{ info.dates.start.localDate }}</p>
     <p class="eventP">Start Time: {{ info.dates.start.localTime }}</p>
-    <p class="eventP">{{ info._embedded.venues[0].name }}</p>
+    <p class="eventP">{{ info._embedded.venues[0].name }} // {{ info._embedded.venues[0].city.name }}, {{ info._embedded.venues[0].state.stateCode }}</p>
     <p class="eventP">$ {{ info.priceRanges[0].min || "(No additional price information available)" }}</p>
     <a href="{{info.url}}">View on Ticketmaster</a>
     <section class="modalBtns">
