@@ -1,0 +1,27 @@
+<h1 class="title" id="title">EVNT</h1>
+<p class="subtitle" id="subtitle">What do you want to attend <span class="question-mark">?<span class="trademark">™</span></span></p>
+
+<section action="" class="search-from" id="search-from">
+    
+
+
+    <label for="city-entry" class="s-label c-label">city</label>
+    <label for="genre-select" class="s-label g-label">genre</label>
+    <label for="dates" class="s-label d-label">dates</label>
+    <input name="city-entry" type="text" placeholder="Enter City Here" ng-model="$ctrl.inp.city" class="city-input input" id="city-input">
+
+    <select name="genre-select" type="text" ng-init="$ctrl.inp.interest = ' '" ng-model="$ctrl.inp.interest" class="interest-input input" id="interest-input">
+        <option value="music">Music</option>
+        <option value="sports">Sports</option>
+        <option value="comedy">Comedy</option>
+        <option value="festival">Festival</option>
+    </select>
+    
+    <div class="dates" id="date">
+        <input type="date" ng-model="$ctrl.fdate.value" class="date-input input" id="date-input">
+        <input type="date" ng-model="$ctrl.ldate.value" class="date-input input" id="date-input">
+    </div>
+
+    <button class="search-btn" ng-click="$ctrl.getData($ctrl.inp.interest, $ctrl.inp.city, $ctrl.fdate.value, $ctrl.ldate.value);">Search</button>
+</section>
+

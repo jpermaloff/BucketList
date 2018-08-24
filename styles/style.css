@@ -1,8 +1,330 @@
 * {
     margin: 0px; 
     padding: 0px; 
+    font-size: 32px;
 }
 
+html{
+    min-height: 100%;
+}
+
+body{
+    min-width: 100%;
+    min-height: 100%;
+    position: absolute;
+}
 button{
     border: none;  
+}
+
+/* Christopher Hand - latin-ext_latin */
+@font-face {
+    font-family: 'Christopher Hand';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/comesinhandy.ttf'); /* IE9 Compat Modes */
+    src: local('Christopher Hand'), local('comesinhandy'),
+         url('../fonts/comesinhandy.ttf') format('truetype'), /* Safari, Android, iOS */
+  }
+
+@font-face {
+    font-family: 'Coffee House';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/coffeehouse.ttf'); /* IE9 Compat Modes */
+    src: local('Coffee Huse'), local('coffeehouse'),
+         url('../fonts/coffeehouse.ttf') format('truetype'), /* Safari, Android, iOS */
+  }
+
+  @font-face{
+      font-family: 'Optimus Princeps';
+      font-style: normal;
+      font-weight: 400;
+      src: url('../fonts/optimusprinceps.ttf');
+      src: local('Optimus Princeps'), local('optimusprinceps'),
+          url('../fonts/optimusprinceps.ttf'), format('truetype'),
+  }
+
+.ease {
+    height: 1000px;
+    /* overflow: hidden; */
+    position: fixed;
+    z-index: 100;
+    bottom: 24%;
+    left: 73%;
+}
+
+.ease:hover{
+    height: 75px;
+    width: 100%; 
+}
+
+.backgroundGradient{
+    background: linear-gradient(45deg, #3e3e3e, black 90%);
+    min-height: 100%; 
+    position: absolute; 
+    width: 100%; 
+    z-index: -1; 
+}
+
+.title{
+    font-size: 3.5em; 
+    color: #fff7e7; 
+    text-align: center; 
+    font-family: 'Christopher Hand', sans-serif;
+    margin-top: 10px; 
+}
+
+.subtitle{
+    font-size: 1.2em; 
+    color: #9c6466;
+    text-align: center; 
+    font-family: 'Coffee House', sans-serif; 
+    margin: 0px 0px 40px 0px; 
+}
+
+.search-from{
+    display: grid; 
+    grid-template-columns: 40% 27% 32%; 
+    width: 85%; 
+    margin: 0px auto 0px auto; 
+}
+
+.s-label{
+    color: #8d8d8d;
+    font-family: 'Optimus Princeps', sans-serif; 
+    font-size: 1.35em; 
+}
+
+.g-label{
+    width: 88%; 
+   text-align: center;
+}
+
+.c-label{
+    width: 93%; 
+    text-align: center; 
+}
+
+.d-label{
+    text-align: center;
+}
+
+.question-mark{
+    font-size: 1.2em; 
+    color: #9c6466;
+    font-family: 'Christopher Hand', sans-serif;
+    margin: 0px 0px 0px -10px;  
+    position: relative;
+}
+
+.trademark{
+    font-size: 20px; 
+    color: #9c6466;
+    font-family: cursive;
+    margin: 10px 0px 0px -3px;
+    position: absolute;
+      
+}
+
+.city-input{
+    width: 93%; 
+}
+
+.interest-input{
+    width: 88%; 
+}
+
+.date-input{
+    width: 45%; 
+    font-size: 0.5em; 
+}
+
+.input{
+    border: none; 
+    border-radius: 5px; 
+    margin: 25px 0px 0px 0px; 
+}
+
+.dates{
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-between;
+
+}
+
+.search-btn{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    margin: 100px 0px 0px auto;
+    width: 50%;  
+    font-size: 3em; 
+    font-family: 'Coffee House', sans-serif; 
+    border-radius: 5px; 
+    background: #9c6466;
+    color: #fff7e7;
+    cursor: pointer;
+
+}
+.eventList {
+    display: flex;
+    flex-wrap: wrap;
+    background: linear-gradient(#8d8d8daf, #444343cc 90%);
+    margin: 50px auto;
+    padding: 20px;
+    width: 75%;
+    border-radius: 20px;
+    opacity: 1;
+   }
+.eventList:nth-child(even) {
+    background: linear-gradient( #444343cc, #8d8d8daf 90%);
+}
+
+.favBtn {
+    height: 25px;
+    width: 75px;
+    margin-bottom: 10px;
+}
+
+.eventInfo {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    text-align: left;
+    margin: 20px;
+    max-width: 50%;
+}
+.eventBtns {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+img {
+    width: 400px;
+    height: auto;
+    margin-left: 10px;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+.moreInfoBtn, .favBtn, .modalFavBtn, .closeBtn {
+    width: 100%;
+    height: 100%;
+    margin: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: 'Permanent Marker', cursive;
+}
+.eventImg {
+position: relative
+}
+.resultsNav {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    width: 100%;
+    justify-content:  space-around;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    background: linear-gradient(#3e3e3e, black 90%);
+    z-index: 999999999;
+}
+.navBtn {
+    width: 25%;
+    padding: 10px 0;
+    margin-top: 35px;
+    background-color: #9c6466;
+    color: white;
+    border-radius: 10px;
+    font-family: 'Coffee House', sans-serif;
+    cursor: pointer;
+}
+
+.navBtn:hover, .search-btn:hover {
+    background-color: #693536;
+}
+
+.listContainer {
+    margin-top: 13%;
+}
+.modal {
+    color: white;
+    position: fixed;
+    z-index: 99999999999999999999;
+    background-color: #2d3d4d;
+    width: 50%;
+    left: 25%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+    border: 5px solid white;
+    top: 20px;
+}
+.modal a, .eventList a {
+    text-decoration: none;
+    color: #309fd3;
+}
+
+.modal a:hover, .eventList a:hover {
+    text-decoration: none;
+    color: #6fc2e9;
+}
+
+.modalFavBtn:hover, .closeBtn:hover, .moreInfoBtn:hover, .favBtn:hover {
+background-color: darkgray;
+}
+.modalBtns {
+    display: flex;
+    width: 100%;
+}
+
+.close {
+    position: absolute;
+    right: 2%;
+    font-size: 80px;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: darkgray;
+}
+
+/* transitions */
+.view-animate.ng-enter, .view-animate.ng-leave {
+    
+    
+}
+
+.view-animate.ng-enter {
+    animation: fadein 1s linear;
+    opacity:0;
+}
+
+.view-animate.ng-leave {
+    animation: fadeout 0s linear;
+
+}
+
+@keyframes fadein {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+@keyframes fadeout {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+
+.eventTitle {
+    font-size:50px;
+    font-family: 'Permanent Marker', cursive;
+}
+.eventP {
+    font-size: 20px;
+    color: rgb(194, 187, 187);
+    font-family: 'Josefin Slab', serif;
+}
+a {
+    font-size: 20px;
+
 }

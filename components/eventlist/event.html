@@ -1,0 +1,37 @@
+<nav class="resultsNav">
+  <button ng-click="$ctrl.changePath('/search')" class="navBtn">SEARCH AGAIN</button>
+  <h1 class="title" id="title">EVNT</h1>
+  <button ng-click="$ctrl.changePath('/bucket')" class="navBtn">BUCKET LIST</button>
+</nav>
+<section class="listContainer">
+  <section class="eventList" ng-repeat="info in $ctrl.searchInfo | orderBy: '+dates.start.localDate' track by $index">
+    <section class="eventImg">  
+      <img ng-src="{{ info.images[0].url }}">
+    </section>
+    <section class="eventInfo">
+      <h1 class="eventTitle">{{ info.name }}</h1>
+      <p class="eventP">{{ info.dates.start.localDate }}</p>
+      <p class="eventP">{{ info._embedded.venues[0].name }}</p>
+      <a href="{{info.url}}">View on Ticketmaster</a>
+    </section>
+    <section class="eventBtns">
+      <button class="favBtn" ng-click="$ctrl.favClick(info);">ADD TO BUCKET LIST</button>
+      <button class="moreInfoBtn" ng-click="$ctrl.moreInfo($index);">MORE INFORMATION</button>
+    </section>
+
+
+  <section class="modal" ng-if="$ctrl.show === $index">
+    <img src="{{ info.images[0].url }}">
+    <h1 class="eventTitle">{{ info.name }}</h1>
+    <p class="eventP">{{ info.dates.start.localDate }}</p>
+    <p class="eventP">Start Time: {{ info.dates.start.localTime }}</p>
+    <p class="eventP">{{ info._embedded.venues[0].name }}</p>
+    <p class="eventP">$ {{ info.priceRanges[0].min || "(No additional price information available)" }}</p>
+    <a href="{{info.url}}">View on Ticketmaster</a>
+    <section class="modalBtns">
+        <button class="modalFavBtn" ng-click="$ctrl.favClick(info); $ctrl.closeInfo();">Add to Bucket List</button>
+    </section>
+    <i ng-click="$ctrl.closeInfo();" class="material-icons close">clear</i>
+  </section>
+</section>
+</section>
